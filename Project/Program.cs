@@ -74,7 +74,37 @@ public class Program
 
     #region Task 3
 
-    
+    int[] array = { 4, 55, 33, 75, 39, 32, 67, 24 };
+
+    foreach (var cell in array)
+    {
+        Console.Write($"{cell}\t");
+    }
+
+    Console.WriteLine();
+
+    Console.Write("The array shown. Select which element to remove from the array (1, 2, 3...): ");
+    int selected = Convert.ToInt32(Console.ReadLine());
+
+    int[] newArray = new int[array.Length - 1];
+
+    for (int i = 0, j = 0; i < array.Length; i++)
+    {
+        if (i == selected - 1)
+        {
+            continue;
+        }
+
+        newArray[j] = array[i];
+        j++;
+    }
+
+    Console.WriteLine();
+
+    foreach (var cell in newArray)
+    {
+        Console.Write($"{cell}\t");
+    }
 
     #endregion
 
